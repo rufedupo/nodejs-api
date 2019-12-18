@@ -8,9 +8,11 @@ app.use(express.json());
 app.use(cors());
 
 // Iniciando o DB
+var url = process.env.MONGODB_URI || 'mongodb://localhost:27017/nodeapi';
 mongoose.connect(
-  'mongodb://localhost:27017/nodeapi',
+  url,
   { 
+    db: "heroku_k0bh2thk",
     useUnifiedTopology: true,
     useNewUrlParser: true 
   }
