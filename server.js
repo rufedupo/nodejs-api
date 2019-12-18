@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
@@ -11,7 +13,6 @@ app.use(cors());
 mongoose.connect(
   process.env.MONGO_URL,
   { 
-    useUnifiedTopology: true,
     useNewUrlParser: true 
   }
 );
