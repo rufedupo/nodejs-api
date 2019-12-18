@@ -13,7 +13,8 @@ app.use(cors());
 mongoose.connect(
   process.env.MONGO_URL,
   { 
-    useNewUrlParser: true 
+    useNewUrlParser: true,
+    useUnifiedTopology: true 
   }
 );
 requireDir('./src/models');
