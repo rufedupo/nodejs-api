@@ -9,7 +9,7 @@ app.use(cors());
 
 // Iniciando o DB
 mongoose.connect(
-  'mongodb://localhost:27017/nodeapi',
+  process.env.MONGO_URL,
   { 
     useUnifiedTopology: true,
     useNewUrlParser: true 
@@ -19,4 +19,4 @@ requireDir('./src/models');
 
 app.use('/', require('./src/routes'));
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
